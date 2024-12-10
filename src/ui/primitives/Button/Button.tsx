@@ -10,11 +10,11 @@ export type ButtonProps = Omit<ButtonBaseProps, "variant"> & {
   >;
 };
 export const Button = React.forwardRef(function Button(
-  { className, variant = "primary", ...props }: ButtonProps,
+  { className, variant = "primary",label, ...props }: ButtonProps,
   ref: React.ForwardedRef<HTMLElement>,
 ) {
   return (
-    <ButtonBase {...props} variant={variant} className={className} ref={ref} />
+    <ButtonBase {...props} variant={variant} className={className} ref={ref}>{label}</ButtonBase>
   );
 });
 
